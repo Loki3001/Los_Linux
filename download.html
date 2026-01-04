@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Download LokeshOS Pro ISO - Installation guide, system requirements, and community resources.">
+  <title>Download - LokeshOS Pro</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="LokeshOS Logo" height="40" onerror="this.style.display='none'">
+      <span>LokeshOS Pro</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="specs.html">Tech Specs</a>
+      <a href="compare.html">Compare</a>
+      <a href="download.html">Download</a>
+    </nav>
+  </header>
+
+  <div class="container fade-in">
+    <h2 class="glow">Download LokeshOS Pro</h2>
+
+    <div class="download-box">
+      <h3>Latest Release: v1.0.0</h3>
+      <p style="color: var(--muted); margin-bottom: 30px;">
+        ISO Size: ~2.1 GB | Released: January 2026
+      </p>
+
+      <a class="button" href="assets/iso/LokeshOS-Pro.iso" download style="font-size: 1.2rem; padding: 18px 40px;">
+        ⬇️ Download ISO
+      </a>
+
+      <div class="checksum">
+        <strong>SHA-256 Checksum:</strong><br>
+        <span style="color: var(--accent);">
+          [Place your actual checksum here after generating the ISO]
+        </span>
+      </div>
+
+      <p style="margin-top: 20px; font-size: 0.9rem; color: var(--muted);">
+        Verify integrity after download:<br>
+        <code style="color: var(--text);">sha256sum LokeshOS-Pro.iso</code>
+      </p>
+    </div>
+
+    <h3>📋 System Requirements</h3>
+    <table>
+      <tr>
+        <td>Processor</td>
+        <td>64-bit x86 CPU (Intel Core i3 or better)</td>
+      </tr>
+      <tr>
+        <td>RAM</td>
+        <td>4GB minimum, 8GB+ recommended</td>
+      </tr>
+      <tr>
+        <td>Storage</td>
+        <td>25GB free space (50GB+ for development)</td>
+      </tr>
+      <tr>
+        <td>Graphics</td>
+        <td>Intel integrated graphics or better</td>
+      </tr>
+      <tr>
+        <td>BIOS</td>
+        <td>UEFI firmware (Legacy BIOS not supported)</td>
+      </tr>
+      <tr>
+        <td>Boot Media</td>
+        <td>USB drive 8GB+ or DVD</td>
+      </tr>
+    </table>
+
+    <h3>🚀 Installation Roadmap</h3>
+
+    <div class="features">
+      <div class="feature-card">
+        <h3>Step 1: Prepare Boot Media</h3>
+        <p><strong>Option A: Ventoy (Recommended)</strong></p>
+        <ol>
+          <li>Download <a href="https://www.ventoy.net" target="_blank">Ventoy</a></li>
+          <li>Install Ventoy to USB drive</li>
+          <li>Copy ISO file to USB (no flashing needed!)</li>
+        </ol>
+        <p style="margin-top: 15px;"><strong>Option B: Rufus (Windows)</strong></p>
+        <ol>
+          <li>Download <a href="https://rufus.ie" target="_blank">Rufus</a></li>
+          <li>Select LokeshOS ISO</li>
+          <li>Choose GPT partition scheme</li>
+          <li>Click Start</li>
+        </ol>
+        <p style="margin-top: 15px;"><strong>Option C: dd (Linux/Mac)</strong></p>
+        <pre style="background: var(--bg); padding: 10px; border-radius: 6px; overflow-x: auto;">
+sudo dd if=LokeshOS-Pro.iso of=/dev/sdX bs=4M status=progress
+sudo sync</pre>
+      </div>
+
+      <div class="feature-card">
+        <h3>Step 2: Configure BIOS</h3>
+        <p><strong>For Lenovo ThinkBook 14-IML:</strong></p>
+        <ol>
+          <li>Shut down laptop completely</li>
+          <li>Press <strong>Novo Button</strong> (small button near power)</li>
+          <li>Select <strong>BIOS Setup</strong></li>
+          <li>Go to <strong>Boot</strong> tab</li>
+          <li>Set Boot Mode to <strong>UEFI</strong></li>
+          <li>Disable <strong>Secure Boot</strong> (if enabled)</li>
+          <li>Save & Exit (F10)</li>
+        </ol>
+        <p style="margin-top: 15px; color: var(--muted);">
+          💡 <strong>Tip:</strong> Write down current settings before changing
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Step 3: Boot & Install</h3>
+        <ol>
+          <li>Insert USB drive</li>
+          <li>Press <strong>Novo Button</strong> → <strong>Boot Menu</strong></li>
+          <li>Select USB device</li>
+          <li>Choose "Install LokeshOS Pro" from GRUB menu</li>
+          <li>Follow on-screen installer</li>
+          <li>Create user account & password</li>
+          <li>Wait for installation (~15 minutes)</li>
+          <li>Reboot & remove USB</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>⚠️ Important Notes</h3>
+    <div class="feature-card" style="border-color: #ff6b00;">
+      <ul style="margin: 0;">
+        <li><strong>Backup your data!</strong> Installation will erase the target drive</li>
+        <li>Dual-boot with Windows? Use manual partitioning during install</li>
+        <li>Keep your Windows product key handy if dual-booting</li>
+        <li>First boot takes 2-3 minutes (system optimization)</li>
+        <li>Wi-Fi drivers load automatically after first boot</li>
+      </ul>
+    </div>
+
+    <h3>🆘 Troubleshooting</h3>
+    <table>
+      <tr>
+        <td>USB not detected</td>
+        <td>Try different USB port, ensure UEFI boot mode enabled</td>
+      </tr>
+      <tr>
+        <td>Black screen after boot</td>
+        <td>Add <code>nomodeset</code> to GRUB boot parameters</td>
+      </tr>
+      <tr>
+        <td>Wi-Fi not working</td>
+        <td>Connect via Ethernet first, then run: <code>sudo apt update && sudo apt upgrade</code></td>
+      </tr>
+      <tr>
+        <td>Secure Boot error</td>
+        <td>Disable Secure Boot in BIOS settings</td>
+      </tr>
+    </table>
+
+    <h3>📚 Post-Installation Guide</h3>
+    <ol style="font-size: 1.1rem; line-height: 1.8;">
+      <li><strong>Update System:</strong> Open terminal → <code>sudo apt update && sudo apt upgrade</code></li>
+      <li><strong>Test AI Stack:</strong> Open terminal →
+        <code>python3 -c "import tensorflow; print(tensorflow.__version__)"</code></li>
+      <li><strong>Install Additional Software:</strong> Use GNOME Software Center or <code>apt install</code></li>
+      <li><strong>Configure Git:</strong> <code>git config --global user.name "Your Name"</code></li>
+      <li><strong>Join Community:</strong> See links below</li>
+    </ol>
+
+    <h3>🌐 Community & Support</h3>
+    <div class="features">
+      <div class="feature-card glow-border">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/lokeshyadav/lokeshos" target="_blank">
+            github.com/lokeshyadav/lokeshos
+          </a></p>
+        <p style="color: var(--muted);">Source code, issues, contributions</p>
+      </div>
+      <div class="feature-card glow-border">
+        <h3>Documentation</h3>
+        <p><a href="https://docs.lokeshos.dev" target="_blank">
+            docs.lokeshos.dev
+          </a></p>
+        <p style="color: var(--muted);">Guides, tutorials, API docs</p>
+      </div>
+      <div class="feature-card glow-border">
+        <h3>Discord</h3>
+        <p><a href="https://discord.gg/lokeshos" target="_blank">
+            discord.gg/lokeshos
+          </a></p>
+        <p style="color: var(--muted);">Live chat, support, community</p>
+      </div>
+    </div>
+
+    <h3>🎥 Video Tutorials</h3>
+    <ul style="font-size: 1.1rem;">
+      <li><a href="#">Complete Installation Walkthrough (15 min)</a></li>
+      <li><a href="#">First 10 Things to Do After Installing LokeshOS</a></li>
+      <li><a href="#">Dual Boot with Windows 11 - Step by Step</a></li>
+      <li><a href="#">Setting Up Your ML Environment</a></li>
+    </ul>
+
+    <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--card); border-radius: 12px;">
+      <h3 style="margin-top: 0;">Ready to Experience LokeshOS?</h3>
+      <a class="button" href="assets/iso/LokeshOS-Pro.iso" download style="font-size: 1.1rem;">
+        Download Now
+      </a>
+      <p style="margin-top: 20px; color: var(--muted);">
+        Questions? Join our <a href="#">Discord community</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
